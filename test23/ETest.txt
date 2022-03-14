@@ -1,0 +1,11 @@
+tree = {'C': {'A','B'},'F': {'C'},'D': {'C'}}
+parents(tree, 'C')
+parents(tree, 'A')
+grandparents(tree, 'D')
+grandparents(tree, 'C')
+children(tree,'A')
+children(tree,'D')
+grandchildren(tree, 'A')
+grandchildren(tree, 'F')
+siblings(tree, 'F')
+siblings(tree, 'C')

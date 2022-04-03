@@ -1,5 +1,5 @@
 # Обходы графов
-
+![alt text](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/zadachi/A.png)
 ## Алгоритм DFS
 Алгоритм обходит все вершины, доступные из некоторой начальной вершины [start]
 

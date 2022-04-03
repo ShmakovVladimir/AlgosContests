@@ -1,5 +1,24 @@
 # Обходы графов
 ![alt text](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/zadachi/A.png)
+[Задача A](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/A.py)
+![alt text](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/zadachi/A.png)
+[Задача ](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/A.py)
+![alt text](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/zadachi/A.png)
+[Задача ](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/A.py)
+![alt text](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/zadachi/A.png)
+[Задача ](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/A.py)
+![alt text](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/zadachi/A.png)
+[Задача ](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/A.py)
+![alt text](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/zadachi/A.png)
+[Задача ](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/A.py)
+![alt text](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/zadachi/A.png)
+[Задача ](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/A.py)
+![alt text](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/zadachi/A.png)
+[Задача ](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/A.py)
+![alt text](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/zadachi/A.png)
+[Задача ](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/A.py)
+![alt text](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/zadachi/A.png)
+[Задача ](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/A.py)
 ## Алгоритм DFS
 Алгоритм обходит все вершины, доступные из некоторой начальной вершины [start]
 

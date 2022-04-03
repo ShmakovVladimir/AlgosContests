@@ -1,7 +1,6 @@
 # Обходы графов
 [Задача A](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/A.py)
 ![alt text](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/zadachi/A.png)
-![alt text](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/zadachi/A.png)
 [Задача ](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/A.py)
 ![alt text](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/zadachi/A.png)
 [Задача ](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/A.py)

@@ -1,24 +1,19 @@
 
-def DFS(start: int,colors: list,graph: list,cycle: list):
+def DFS(start:int ,colors: list,graph: list,FLAG: bool):
     colors[start] = 1
-    cycle.append(start)
     for vert in graph[start]:
         if colors[vert] == 1:
-            return cycle
+           FLAG = True
         elif colors[vert] == 0:
-            DFS(vert,colors,graph,cycle)
+            DFS(vert,colors,graph,FLAG)
     colors[start] = 2
-    cycle.pop()
-
 vertexQ,edgeQ = map(int,input().split())
 graph = [[] for _ in range(vertexQ)]
 for _ in range(edgeQ):
-    vertex1,vertex2 = map(int,input().split())
-    graph[vertex1-1].append(vertex2-1)
+    sVertex,eVertex = map(int,input().split())
+    graph[sVertex].append(eVertex)
+colors = [0 for _ in range(vertexQ)]
 for i in range(vertexQ):
-    colors = [0 for _ in range(vertexQ)]
-    alpha = DFS(i,colors,graph,[])
-    
-    print(alpha)
-   
-print("YES")
+        FLAG = False
+        DFS(i,colors,graph,FLAG)
+        print(FLAG)

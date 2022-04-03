@@ -1,5 +1,8 @@
 # Обходы графов
 [**Задача A-Проверить связность графа**](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/A.py)
+[**B-Подсчёт весов компонент связности неориентированного графа**](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/B.py)
+[**C-Проверка ацикличности графа**](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/C.py)
+
 
 ## Алгоритм DFS
 Алгоритм обходит все вершины, доступные из некоторой начальной вершины [start]

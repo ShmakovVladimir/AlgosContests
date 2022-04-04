@@ -28,7 +28,7 @@ class Point:
 gridHeight,gridWidth = map(int,input().split())
 startY,startX = map(int,input().split())
 endY,endX = map(int,input().split())
-start,end = Point(gridWidth-startX,gridHeight-startY),Point(gridWidth-endX,gridHeight-endY)
+start,end = Point(startX,startY),Point(endY,endX)
 
 grid = [[None for _ in range(gridHeight)] for _ in range(gridWidth)]
 for y in range(gridHeight):
@@ -40,7 +40,7 @@ steck,dist = queue.Queue(0),[[0 for _ in range(gridHeight)] for _ in range(gridW
 steck.put(start)
 grid[start.x][start.y] = False
 alpha = True
-while alpha and steck.not_empty:
+while alpha and (not steck.empty()):
     cell = steck.get()
     for neib in cell.neibors():
         if grid[neib.x][neib.y]:

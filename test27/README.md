@@ -7,6 +7,8 @@
 - [**Задача C-Проверка ацикличности графа**](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/C.py)
 
 - [**Задача D-Топологическая сортировка**](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/D.py)
+
+- [**Задача F-Поиск расстояний от заданной вершины до всех остальных**](https://github.com/ShmakovVladimir/AlgosContests/blob/main/test27/F.py)
 ## Алгоритм DFS
 Алгоритм обходит все вершины, доступные из некоторой начальной вершины [start]
 

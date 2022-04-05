@@ -14,22 +14,16 @@ class Point:
             neib.append(Point(self.x,self.y-1))
         if self.y+1<gridHeight:
             neib.append(Point(self.x,self.y+1))
-        if self.x+1<gridWidth and self.y-1>=0:
-            neib.append(Point(self.x+1,self.y-1))
-        if self.x+1<gridWidth and self.y+1<gridHeight:
-            neib.append(Point(self.x+1,self.y+1))
-        if self.x-1>=0 and self.y+1<gridHeight:
-            neib.append(Point(self.x-1,self.y+1))
-        if self.x-1>=0 and self.y-1>=0:
-            neib.append(Point(self.x-1,self.y-1))
         return neib
     def __eq__(self,other):
         return (self.x==other.x and self.y == other.y)
 gridHeight,gridWidth = map(int,input().split())
 startY,startX = map(int,input().split())
 endY,endX = map(int,input().split())
-start,end = Point(startX,startY),Point(endY,endX)
-
+start,end = Point(startX,startY),Point(endX,endY)
+if start == end:
+    print(0)
+    exit()
 grid = [[None for _ in range(gridHeight)] for _ in range(gridWidth)]
 for y in range(gridHeight):
     string = input()

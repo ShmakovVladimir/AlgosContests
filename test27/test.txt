@@ -1,8 +1,9 @@
-5 7
-3 5
-1 1
-XXXXXXX
-X X   X
-X X X X
-X   X X
-XXXXXXX
+8 8
+7 3
+3 1
+5 2
+6 4
+6 7
+4 7
+1 6
+1 2

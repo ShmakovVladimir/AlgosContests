@@ -1,39 +1,48 @@
-def DFS(start: int,graph: list,colors: list,previous: list):
-    global cycleEnd,cycleStart
-    colors[start] = 1
-    for vert in graph[start]:
-        if colors[vert]==0:
-            previous[vert] = start
-            if DFS(vert,graph,colors,previous):
-                return True
-        elif colors[vert]==1:
-            cycleEnd = start
-            cycleStart = vert
-            return True
-    colors[start] = 2
-    return False
+import queue
+
+def BFS(start: int,visited: list,graph: list):
+    steck = queue.Queue(0)
+    steck.put(start)
+    visited[start] = True
+    dist,minCycle = [0 for _ in range(len(graph))],[]
+    path,minCycleLength = [None for _ in range(len(graph))],float("inf")
+    while not steck.empty():
+        vert = steck.get()
+        for neib in graph[vert]:
+            if not visited[neib]:
+                steck.put(neib)
+                visited[neib] = True
+                dist[neib] = dist[vert]+1
+                path[neib] = vert
+            else:
+                cycleLength = dist[vert]-dist[neib]
+                if cycleLength<minCycleLength and cycleLength>2:
+                    minCycleLength = cycleLength
+                    minCycle = []
+                    minCycle.append(vert)
+                    for _ in range(cycleLength):
+                        minCycle.append(path[minCycle[-1]])
+    return minCycle
+
 vertexQ,edgeQ = map(int,input().split())
 graph = [[] for _ in range(vertexQ)]
 for _ in range(edgeQ):
     vertex1,vertex2 = map(int,input().split())
     graph[vertex1].append(vertex2)
-colors,previous = [0 for _ in range(vertexQ)],[None for _ in range(vertexQ)]
-minCycle = [None]*(vertexQ+1)
+visited = [False for _ in range(vertexQ)]
+minCycle = [None]*(vertexQ+2)
 for i in range(vertexQ):
-    cycleStart,cycleEnd = None,None
-    if colors[i]!=2:
-         if DFS(i,graph,colors,previous):
-            cycle = []
-            goThroughCycle = cycleEnd
-            while goThroughCycle!=cycleStart:
-                cycle.append(previous[goThroughCycle])
-                goThroughCycle = previous[goThroughCycle]
-            cycle.append(cycleEnd)
-            if len(minCycle)>len(cycle):
-                minCycle = cycle
-
-
-if len(minCycle)==vertexQ+1:
-    print("NO CYCLES")
+    if not visited[i]:
+        alpha = BFS(i,visited,graph)
+        if len(alpha)>0 and len(alpha)<len(minCycle):
+            minCycle = alpha
+if len(minCycle)!=vertexQ+2:
+    print(*minCycle[::-1])
     exit()
-print(minCycle)          
+print("NO CYCLES")
+
+                
+
+
+                
+

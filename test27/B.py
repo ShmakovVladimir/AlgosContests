@@ -1,23 +1,21 @@
-def DFS(start: int,visited: list,graph: list):
-    global counter
-    visited[start] = 1
+def DFS(start,visited,graph):
+    global compWeights
+    visited[start] = True
     for vert in graph[start]:
-        if visited[vert[0]]==0:
-            counter+=vert[1]
+        compWeights[-1] += vert[1]
+        if not visited[vert[0]]:
             DFS(vert[0],visited,graph)
-        elif visited[vert[0]]==1:
-            counter+=2*vert[1]
-    visited[start] = 2
-
-vertexQ,edgeQ = map(int,input().split())
+vertexQ, edqeQ = map(int, input().split())
 graph = [[] for _ in range(vertexQ)]
-for _ in range(edgeQ):
+compWeights = []
+for _ in range(edqeQ):
     vertex1,vertex2,weight = map(int,input().split())
     graph[vertex1].append([vertex2,weight])
     graph[vertex2].append([vertex1,weight])
 visited = [False for _ in range(vertexQ)]
-for i in range(vertexQ):
-    if not visited[i]:
-        counter = 0
-        DFS(i,visited,graph)
-        print((counter+2)//2-2)
+for start in range(vertexQ):
+    if not visited[start]:
+        compWeights.append(0)
+        DFS(start,visited,graph)
+for weight in sorted(compWeights):
+    print(weight//2)

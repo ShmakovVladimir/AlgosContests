@@ -1,41 +1,30 @@
-import queue
-
-def BFS(start: int,visited: list,graph: list):
-    steck = queue.Queue(0)
-    steck.put(start)
+def DFS(start: int,visited: list,graph: list):
+    global time,low,cutVertexes,timer
     visited[start] = True
-    while not steck.empty():
-        vert = steck.get()
-        for neib in graph[vert]:
-            if not visited[neib]:
-                steck.put(neib)
-                visited[neib] = True
-
-def countConnectivitys(graph: list,doNotVisit: int):
-    global visited
-    ans = 0
-    visited[doNotVisit] = True
-    for i in range(len(graph)):
-        if not visited[i]:
-            BFS(i,visited,graph)
-            ans +=1
-    return ans
+    low[start] = time[start] = timer
+    timer+=1
+    for vert in graph[start]:
+        if visited[vert]:
+            low[start] = min(low[start],time[vert])
+        elif not visited[vert]:
+            DFS(vert,visited,graph)
+            low[start] = min(low[start],low[vert])
+            if low[vert]>=low[start] and start!=0:
+                cutVertexes.append(start+1)
 
 vertexQ,edgeQ = map(int,input().split())
 graph = [[] for _ in range(vertexQ)]
-if vertexQ==1:
-    print(-1)
 for _ in range(edgeQ):
-    sVertex,eVertex = map(int,input().split())
-    graph[sVertex-1].append(eVertex-1)
-    graph[eVertex-1].append(sVertex-1)
-res = []
-visited = [False]*len(graph)
-for i in range(vertexQ):
-    if countConnectivitys(graph,i)-1:
-        res.append(i+1)
-if len(res)==0:
+    vertex1,vertex2 = map(int,input().split())
+    graph[vertex1-1].append(vertex2-1)
+    graph[vertex2-1].append(vertex1-1)
+time,low = [0 for _ in range(vertexQ)],[float("inf") for _ in range(vertexQ)]
+visited = [False for _ in range(vertexQ)]
+cutVertexes,timer = [],0
+if len(graph[0])>1:
+    cutVertexes.append(1)
+DFS(0,visited,graph)
+if len(cutVertexes) == 0:
     print(-1)
     exit()
-print(*res)
-
+print(*sorted(cutVertexes))

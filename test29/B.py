@@ -1,37 +1,32 @@
-def minTree(graph: list,start: int)->list:
-    visited = [False]*len(graph)
-    dist = [float("inf")]*len(graph)
-    path = [None]*len(graph)
-    dist[start] = 0
-    nowVert = start
-    for _ in range(vertexQ):
-        visited[nowVert] = True
-        for child in range(len(graph)):
-            if graph[nowVert][child]!=-1 and (not visited[child]):
-                if dist[child] > dist[nowVert]+graph[nowVert][child]:
-                    dist[child] = dist[nowVert]+graph[nowVert][child]
-                    path[child] = nowVert
-        minDist = float("inf")
-        for vert in range(len(graph)):
-            if (not visited[vert]) and dist[vert]<minDist:
-                minDist = dist[vert]
-                nowVert = vert
-    return path
-
 vertexQ,edgeQ = map(int,input().split())
-graph = [[-1 for _ in range(vertexQ)] for _ in range(vertexQ)]
+graph = [[] for _ in range(vertexQ)]
 for _ in range(edgeQ):
     vertex1,vertex2,weight = map(int,input().split())
-    graph[vertex1][vertex2] = weight
-    graph[vertex2][vertex1] = weight
-path = minTree(graph,0)
-weight = 0
-for i in range(1,vertexQ):
-    weight+=graph[path[i]][i]
-print(weight)
-for i in range(1,vertexQ):
-    print(str(path[i])+' '+str(i))
-
-
+    graph[vertex1].append([vertex2,weight])
+    graph[vertex2].append([vertex1,weight])
+visited = [False]*vertexQ
+dist = [float("inf") for _ in range(vertexQ)]
+path = [None for _ in range(vertexQ)]
+nowVert = 0
+visited[nowVert] = True
+dist[nowVert] = 0
+treeLength,tree = 0,[]
+for _ in range(vertexQ-1):
+    for child in graph[nowVert]:
+        if (not visited[child[0]]) and dist[child[0]] > child[1]:
+            dist[child[0]] = child[1]
+            path[child[0]] = nowVert
+    minInd,minDist = None,float("inf")
+    for i in range(vertexQ):
+        if minDist>dist[i] and (not visited[i]):
+            minDist = dist[i]
+            minInd = i
+    treeLength+=minDist
+    tree.append([path[minInd],minInd])
+    nowVert = minInd
+    visited[minInd] = True
+print(treeLength)
+for i in tree:
+    print(str(i[0])+' '+str(i[1]))
 
 

@@ -28,3 +28,7 @@
 	- [Алгоритм Форда-Беллмана](https://github.com/ShmakovVladimir/Contests/blob/main/test28/B.py)
 	- [Нахождение вершины-столицы](https://github.com/ShmakovVladimir/Contests/blob/main/test28/C.py)
 
+- [**Остовные деревья**](https://github.com/ShmakovVladimir/Contests/tree/main/test29)
+	
+	- [Остовное дерево обходом в ширину](https://github.com/ShmakovVladimir/Contests/blob/main/test29/A.py)
+	- [Минимальное остовное дерево (Алгоритм Прима)](https://github.com/ShmakovVladimir/Contests/blob/main/test29/B.py)

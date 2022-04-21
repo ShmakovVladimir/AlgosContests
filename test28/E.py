@@ -1,7 +1,7 @@
 import queue
 
 def minimalDist(graph: list,start: int)->list:
-    heap = queue.LifoQueue(0)
+    heap = queue.PriorityQueue()
     visited = [False for _ in range(len(graph))]
     heap.put((0,start))
     while not heap.empty():
@@ -12,7 +12,6 @@ def minimalDist(graph: list,start: int)->list:
                 distancesandPaths[neib[0]][0] = distancesandPaths[nowVert][0]+neib[1]
                 distancesandPaths[neib[0]][1] = start
                 heap.put((distancesandPaths[neib[0]][0],neib[0]))
-
 
 capitals = list(map(int,input().split()))
 vertexQ,edgeQ = capitals.pop(0),capitals.pop(0)

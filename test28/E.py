@@ -4,14 +4,19 @@ def minimalDist(graph: list,start: int)->list:
     heap = queue.PriorityQueue()
     visited = [False for _ in range(len(graph))]
     heap.put((0,start))
+    capitalInPath = False
     while not heap.empty():
         nowVert = heap.get()[1]
         visited[nowVert] = True
         for neib in graph[nowVert]:
-            if  (not isCapital[neib[0]]) and (not visited[neib[0]]) and distancesandPaths[neib[0]][0] > distancesandPaths[nowVert][0]+neib[1]:
-                distancesandPaths[neib[0]][0] = distancesandPaths[nowVert][0]+neib[1]
-                distancesandPaths[neib[0]][1] = start
+            if  (not visited[neib[0]]):
+                if distancesandPaths[neib[0]][0] > distancesandPaths[nowVert][0]+neib[1]:
+                    distancesandPaths[neib[0]][0] = distancesandPaths[nowVert][0]+neib[1]
+                    distancesandPaths[neib[0]][1] = start
+            if not capitalInPath:      
                 heap.put((distancesandPaths[neib[0]][0],neib[0]))
+        if isCapital[nowVert] and nowVert!=start:
+            capitalInPath = True
 
 capitals = list(map(int,input().split()))
 vertexQ,edgeQ = capitals.pop(0),capitals.pop(0)

@@ -7,4 +7,4 @@
 
 ## Алгоритм Прима
 
-![alt text](https://github.com/ShmakovVladimir/Contests/blob/main/test29/Description%20/Prima.jpg)
+![alt text](https://github.com/ShmakovVladimir/Contests/blob/main/test29/prima.jpg)

@@ -27,8 +27,14 @@
 	- [Восстановление кратчайшего пути при помощи алгоритма Дейкстры](https://github.com/ShmakovVladimir/Contests/blob/main/test28/A.py)
 	- [Алгоритм Форда-Беллмана](https://github.com/ShmakovVladimir/Contests/blob/main/test28/B.py)
 	- [Нахождение вершины-столицы](https://github.com/ShmakovVladimir/Contests/blob/main/test28/C.py)
+	- [Путь минимального веса с чётным количеством рёбер](https://github.com/ShmakovVladimir/Contests/blob/main/test28/D.py)
 
 - [**Остовные деревья**](https://github.com/ShmakovVladimir/Contests/tree/main/test29)
 	
 	- [Остовное дерево обходом в ширину](https://github.com/ShmakovVladimir/Contests/blob/main/test29/A.py)
 	- [Минимальное остовное дерево (Алгоритм Прима)](https://github.com/ShmakovVladimir/Contests/blob/main/test29/B.py)
+
+- [**Потоки в транспортных сетях**](https://github.com/ShmakovVladimir/Contests/tree/main/test210)
+
+	- [Рёберно-непересекающиеся пути](https://github.com/ShmakovVladimir/Contests/tree/main/test210/A.py)
+	- [Максимальный поток](https://github.com/ShmakovVladimir/Contests/tree/main/test210/B.py)

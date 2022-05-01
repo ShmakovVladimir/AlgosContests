@@ -1,47 +1,43 @@
-class state:
-    def __init__(self,win = None,counter = 0):
-        self.win = win
-        self.counter = counter
-    def filled(self)->bool:
-        return not self.win is None
-def play(start: int,graph: list,states: list,edgesFrom: list):
-    for neib in graph[start]:
-        if not states[neib].filled():
-            if not states[start].win:
-                states[neib].win = True
-                play(neib,graph,states,edgesFrom)
-            else:
-                states[neib].counter+=1
-                if states[neib].counter == edgesFrom[neib]:
+class State:
+    def __init__(self):
+        self.win = None
+        self.visits = 0
+        self.edgesFrom = 0
+    def definedState(self)->bool:
+        return self.win is not None
+
+def DFS(start: int):
+    global invertedGraph,states
+    for neib in invertedGraph[start]:
+        if not states[neib].definedState():
+            if states[start].win:
+                states[neib].visits+=1
+                if states[neib].visits == states[neib].edgesFrom:
                     states[neib].win = False
-                    play(neib,graph,states,edgesFrom)
+                    DFS(neib)
+            else:
+                states[neib].win = True
+                DFS(neib)
 
 
 vertexQ,edgeQ,start = map(int,input().split())
 invertedGraph = [[] for _ in range(vertexQ)]
-edgesFrom = [0 for _ in range(vertexQ)]
-withNoOuts = [True for _ in range(vertexQ)]
-states = [state() for _ in range(vertexQ)]
+states = [State() for _ in range(vertexQ)]
 for _ in range(edgeQ):
     vertex1,vertex2 = map(int,input().split())
+    states[vertex1].edgesFrom+=1
     invertedGraph[vertex2].append(vertex1)
-    edgesFrom[vertex1]+=1
-for vertex,i in enumerate(withNoOuts):
-    if i:
+leaves = []
+for vertex,state in enumerate(states):
+    if not state.edgesFrom:
         states[vertex].win = False
-        play(vertex,invertedGraph,states,edgesFrom)
-if not states[start].filled():
+        leaves.append(vertex)
+for leaf in leaves:
+    DFS(leaf)
+if not states[start].definedState():
     print("Draw")
     exit()
-if states[start].win:
+elif states[start].win:
     print("Win")
     exit()
 print("Lose")
-
-
-
-        
-        
-
-
-

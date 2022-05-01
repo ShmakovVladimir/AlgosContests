@@ -1,7 +1,8 @@
 # Игры на графах
 ## Задачи
 - [A-Игра Делимость](https://github.com/ShmakovVladimir/Contests/blob/main/test211/A.py)
-
+- [Сумма игр](https://github.com/ShmakovVladimir/Contests/tree/main/test211/B.py)
+- [Игра на произвольном графе](https://github.com/ShmakovVladimir/Contests/tree/main/test211/С.py)
 
 ## A - Делимость
 
@@ -17,3 +18,4 @@
 
 - N%3 = 1 -> берём один камень
 - N%3 = 2 -> берём два камня
+

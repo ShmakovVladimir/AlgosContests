@@ -38,3 +38,9 @@
 
 	- [Рёберно-непересекающиеся пути](https://github.com/ShmakovVladimir/Contests/tree/main/test210/A.py)
 	- [Максимальный поток](https://github.com/ShmakovVladimir/Contests/tree/main/test210/B.py)
+
+- [**Теория игр**](https://github.com/ShmakovVladimir/Contests/tree/main/test211)
+
+	- [Игра Делимость](https://github.com/ShmakovVladimir/Contests/tree/main/test211/A.py)
+	- [Сумма игр](https://github.com/ShmakovVladimir/Contests/tree/main/test211/B.py)
+	- [Игра на произвольном графе](https://github.com/ShmakovVladimir/Contests/tree/main/test211/С.py)

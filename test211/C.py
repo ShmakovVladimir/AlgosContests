@@ -18,6 +18,28 @@ def DFS(start: int):
             else:
                 states[neib].win = True
                 DFS(neib)
+def findCycle(graph: list):
+    
+    def DFS(start: int,graph: list,colors: list,previous: list):
+        colors[start] = 1
+        for vert in graph[start]:
+            if colors[vert]==0:
+                previous[vert] = start
+                if DFS(vert,graph,colors,previous):
+                    return True
+            elif colors[vert]==1:
+                return True
+        colors[start] = 2
+        return False
+    previous = [0 for _ in range(len(graph))],
+    colors = [None for _ in range(len(graph))]
+    for i in range(len(graph)):
+        if colors[i]!=2:
+            if DFS(i,graph,colors,previous):
+                return True
+    return False
+    
+
 
 
 vertexQ,edgeQ,start = map(int,input().split())
@@ -34,7 +56,7 @@ for vertex,state in enumerate(states):
         leaves.append(vertex)
 for leaf in leaves:
     DFS(leaf)
-if not states[start].definedState():
+if not states[start].definedState() or findCycle(invertedGraph):
     print("Draw")
     exit()
 elif states[start].win:

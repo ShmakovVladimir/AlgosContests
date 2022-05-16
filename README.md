@@ -3,9 +3,22 @@
 ## Второй семестр 
 
 - [**Хеширование и хеш-таблицы**](https://github.com/ShmakovVladimir/Contests/tree/main/test22)
-
+	- [Полиномиальная хеш-функция](https://github.com/ShmakovVladimir/Contests/blob/main/test22/A.py)
+	- [Алгоритм Рабина-Карпа](https://github.com/ShmakovVladimir/Contests/blob/main/test22/B.py)
+	- [Ассоциативный массив на хеш-таблице с цепочками - Добавление элемента](https://github.com/ShmakovVladimir/Contests/blob/main/test22/C.py)
+	- [Ассоциативный массив на хеш-таблице с цепочками - Поиск элемента](https://github.com/ShmakovVladimir/Contests/blob/main/test22/D.py)
+	- [Хеш-таблица с цепочками - Удаление элемента](https://github.com/ShmakovVladimir/Contests/blob/main/test22/E.py)
 - [**Словари, множества, связные списки, куча**](https://github.com/ShmakovVladimir/Contests/tree/main/test23)
-
+	- [Пловцы-пианисты, не изучающие французский](https://github.com/ShmakovVladimir/Contests/blob/main/test23/A.py)
+	- [Уникальные данные](https://github.com/ShmakovVladimir/Contests/blob/main/test23/B.py)
+	- [Голосование за лучший фильм](https://github.com/ShmakovVladimir/Contests/blob/main/test23/C.py)
+	- [Подсчет количества букв в тексте](https://github.com/ShmakovVladimir/Contests/blob/main/test23/D.py)
+	- [Генеалогическое дерево](https://github.com/ShmakovVladimir/Contests/blob/main/test23/E.py)
+	- [Покер Чапаева](https://github.com/ShmakovVladimir/Contests/blob/main/test23/F.py)
+	- [Бедная секретарша](https://github.com/ShmakovVladimir/Contests/blob/main/test23/G.py)
+	- [Обратная польская запись](https://github.com/ShmakovVladimir/Contests/blob/main/test23/H.py)
+	- [Построение кучи](https://github.com/ShmakovVladimir/Contests/blob/main/test23/I.py)
+	- [Сортировка кучей](https://github.com/ShmakovVladimir/Contests/blob/main/test23/J.py)
 - [**Геометрия и RMQ/RSQ**](https://github.com/ShmakovVladimir/Contests/tree/main/test24)
 
 - [**Основы теории графов**](https://github.com/ShmakovVladimir/Contests/tree/main/test25)
